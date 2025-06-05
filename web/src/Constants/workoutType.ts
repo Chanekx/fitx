@@ -1,0 +1,6 @@
+export const WORKOUT_TYPE = {
+    CARDIO : 'CARDIO',
+    STRENGTH: 'STRENGTH',
+    FLEXIBILITY: 'FLEXIBILITY',
+    OTHER: 'OTHER',
+}
