@@ -15,7 +15,7 @@ const SideBar = ({ openPage }: SideBarProps) => {
       sx={{
         width: "6%",
         height: "100vh",
-        backgroundColor: "#F6ECA9",
+          backgroundColor: "#8DBCC7",
       }}
       direction={"column"}
     >

@@ -10,7 +10,6 @@ const Homepage = () => {
     <Stack
       direction="row"
       sx={{
-        backgroundColor: "grey",
         height: "100vh",
         width: "100%",
       }}
@@ -26,8 +25,12 @@ const Homepage = () => {
           marginLeft: "auto",
         }}
       >
-        {activePage === "dashboard" && <Dashboard sx={{ flexGrow: "1" }} />}
-        {activePage === "workoutList" && <Workouts sx={{ flexGrow: "1" }} />}
+        {activePage === "dashboard" && (
+          <Dashboard sx={{ flexGrow: "1", backgroundColor: "#A4CCD9" }} />
+        )}
+        {activePage === "workoutList" && (
+          <Workouts sx={{ flexGrow: "1", backgroundColor: "#A4CCD9" }} />
+        )}
       </Stack>
     </Stack>
   );

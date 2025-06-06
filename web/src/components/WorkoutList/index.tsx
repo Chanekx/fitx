@@ -70,6 +70,7 @@ const WorkoutList = () => {
         sx={{
           height: "100%",
           width: "100%",
+          backgroundColor: "#C4E1E6",
           "& .MuiDataGrid-cell": {
             whiteSpace: "normal",
             lineHeight: "normal",
