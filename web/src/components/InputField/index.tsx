@@ -27,7 +27,7 @@ const InputField = ({
       placeholder={placeholder}
       label={label}
       variant="outlined"
-      sx={{ width: "100%", paddingBottom: "10px" }}
+      sx={{ width: "100%", "& .MuiOutlinedInput-root": { bgcolor: "background.paper" } }}
     />
   );
 };
