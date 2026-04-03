@@ -63,13 +63,14 @@ const WorkoutList = () => {
   ];
 
   return (
-    <Stack sx={{ height: "100%", width: "100%" }}>
+    <Stack sx={{ width: "100%", minHeight: 480, height: "min(560px, calc(100vh - 280px))" }}>
       <DataGrid
         rows={displayWorkouts}
         columns={columns}
         sx={{
           height: "100%",
           width: "100%",
+          border: "none",
           "& .MuiDataGrid-cell": {
             whiteSpace: "normal",
             lineHeight: "normal",

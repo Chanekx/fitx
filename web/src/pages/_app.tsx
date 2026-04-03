@@ -1,10 +1,12 @@
 import "@/styles/globals.css";
 import { AppProps } from "next/app";
 import { useEffect } from "react";
+import { ThemeProvider, CssBaseline } from "@mui/material";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { AdapterDateFns } from "@mui/x-date-pickers/AdapterDateFns";
 import { useRouter } from "next/router";
 import { SnackbarProvider } from "@/context/SnackbarContext";
+import theme from "@/theme/theme";
 
 const App = ({ Component, pageProps }: AppProps) => {
   const router = useRouter();
@@ -16,11 +18,14 @@ const App = ({ Component, pageProps }: AppProps) => {
   }, [router]);
 
   return (
-    <LocalizationProvider dateAdapter={AdapterDateFns}>
-      <SnackbarProvider>
-        <Component {...pageProps} />
-      </SnackbarProvider>
-    </LocalizationProvider>
+    <ThemeProvider theme={theme}>
+      <CssBaseline />
+      <LocalizationProvider dateAdapter={AdapterDateFns}>
+        <SnackbarProvider>
+          <Component {...pageProps} />
+        </SnackbarProvider>
+      </LocalizationProvider>
+    </ThemeProvider>
   );
 };
 export default App;

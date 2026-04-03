@@ -9,15 +9,19 @@ const Header = () => {
       direction="row"
       sx={{
         position: "absolute",
-        alignItems: "end",
+        alignItems: "center",
         justifyContent: "center",
         width: "100%",
-        height: "4%",
-        backgroundColor: "#F6ECA9",
+        minHeight: 52,
+        px: 2,
+        backgroundColor: "background.paper",
+        borderBottom: 1,
+        borderColor: "divider",
+        boxShadow: "0 1px 0 rgba(15, 23, 42, 0.06)",
         overflow: "hidden",
       }}
     >
-      <Typography variant="h6" color="black">
+      <Typography variant="h6" color="text.primary">
         Christian Lloyd Circulado
         <Button
           id="basic-button"

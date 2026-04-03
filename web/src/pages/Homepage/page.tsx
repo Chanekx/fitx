@@ -1,8 +1,9 @@
 import SideBar from "@/components/SideBar";
 import Workouts from "@/components/Workouts";
-import { Stack } from "@mui/material";
+import { Box, Stack } from "@mui/material";
 import Dashboard from "../../components/Dashboard/page";
 import { useHooks } from "./hooks";
+import { SIDEBAR_WIDTH } from "@/theme/theme";
 
 const Homepage = () => {
   const { activePage, openPage } = useHooks();
@@ -10,25 +11,26 @@ const Homepage = () => {
     <Stack
       direction="row"
       sx={{
-        backgroundColor: "grey",
-        height: "100vh",
+        minHeight: "100vh",
         width: "100%",
+        bgcolor: "background.default",
       }}
     >
       <SideBar activePage={activePage} openPage={openPage} />
 
-      <Stack
-        direction="column"
+      <Box
+        component="main"
         sx={{
-          height: "100%",
-          marginTop: "auto",
-          width: "96%",
-          marginLeft: "auto",
+          flex: 1,
+          minWidth: 0,
+          ml: `${SIDEBAR_WIDTH}px`,
+          display: "flex",
+          flexDirection: "column",
         }}
       >
-        {activePage === "dashboard" && <Dashboard sx={{ flexGrow: "1" }} />}
-        {activePage === "workoutList" && <Workouts sx={{ flexGrow: "1" }} />}
-      </Stack>
+        {activePage === "dashboard" && <Dashboard sx={{ flex: 1 }} />}
+        {activePage === "workoutList" && <Workouts sx={{ flex: 1 }} />}
+      </Box>
     </Stack>
   );
 };

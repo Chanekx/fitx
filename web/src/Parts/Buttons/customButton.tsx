@@ -30,8 +30,8 @@ const CustomButton = ({
   switch (buttonUse) {
     case "submit":
       defaultVariant = "contained";
-      defaultColor = "success";
-      customHoverBackgroundColor = "#218838";
+      defaultColor = "primary";
+      customHoverBackgroundColor = undefined;
       break;
     case "cancel":
       defaultVariant = "contained";

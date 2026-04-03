@@ -33,10 +33,14 @@ const AddWorkoutDialog = ({ open, handleClose }: WorkoutsProps) => {
           top: "50%",
           left: "50%",
           transform: "translate(-50%, -50%)",
-          width: "50%",
-          height: "50vh",
-          bgcolor: "#FCE7C8",
-          boxShadow: 24,
+          width: { xs: "92%", sm: "80%", md: "min(560px, 90vw)" },
+          maxHeight: "90vh",
+          overflow: "auto",
+          bgcolor: "background.paper",
+          borderRadius: 3,
+          boxShadow: "0 25px 50px -12px rgba(15, 23, 42, 0.25)",
+          border: 1,
+          borderColor: "divider",
           p: 4,
         }}
       >
@@ -44,10 +48,10 @@ const AddWorkoutDialog = ({ open, handleClose }: WorkoutsProps) => {
           onClick={handleResetandClose}
           sx={{
             position: "absolute",
-            left: 0,
-            top: 0,
-            padding: "10px",
-            color: "black",
+            right: 8,
+            top: 8,
+            minWidth: 40,
+            color: "text.secondary",
           }}
         >
           <CloseIcon />
@@ -55,12 +59,12 @@ const AddWorkoutDialog = ({ open, handleClose }: WorkoutsProps) => {
         <form onSubmit={createWorkout}>
           <Stack
             spacing={1.5}
-            paddingTop={5}
+            paddingTop={2}
             justifyContent="center"
-            alignItems="center"
+            alignItems="stretch"
           >
-            <Typography variant="h3" color="black">
-              Add a Workout
+            <Typography variant="h4" color="text.primary" sx={{ mb: 1, textAlign: "center" }}>
+              Add a workout
             </Typography>
             <InputField
               control={control}

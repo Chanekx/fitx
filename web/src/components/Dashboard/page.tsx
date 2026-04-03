@@ -1,4 +1,5 @@
-import { Stack, SxProps, Typography } from "@mui/material";
+import { Paper, Stack, SxProps, Typography } from "@mui/material";
+import TrendingUpIcon from "@mui/icons-material/TrendingUp";
 
 export interface DashboardProps {
   sx?: SxProps;
@@ -6,15 +7,29 @@ export interface DashboardProps {
 
 const Dashboard = ({ sx }: DashboardProps) => {
   return (
-    <Stack sx={{ backgroundColor: "#F5E8C7", flex: "grow", ...sx }}>
-      <Stack marginTop={5} spacing={2} direction={"row"} marginLeft={"70px"}>
-        <Typography color="black" variant="h3" fontFamily="Inknut Antiqua">
-          Welcome to FitTrack
+    <Stack sx={{ flex: 1, p: { xs: 2, sm: 3, md: 4 }, ...sx }}>
+      <Paper
+        elevation={0}
+        sx={{
+          p: { xs: 3, md: 4 },
+          borderRadius: 3,
+          border: 1,
+          borderColor: "divider",
+          bgcolor: "background.paper",
+          maxWidth: 720,
+        }}
+      >
+        <Stack direction="row" alignItems="center" spacing={1.5} sx={{ mb: 2 }}>
+          <TrendingUpIcon color="primary" sx={{ fontSize: 36 }} />
+          <Typography variant="h3" component="h1" color="text.primary">
+            Welcome to FitTrack
+          </Typography>
+        </Stack>
+        <Typography variant="body1" color="text.secondary" sx={{ maxWidth: 520, lineHeight: 1.7 }}>
+          Here are the workouts you did this month. Use the sidebar to open your workout list and
+          track your progress.
         </Typography>
-        <Typography color="black">
-        Here are the workouts you did this month!
-      </Typography>
-      </Stack>    
+      </Paper>
     </Stack>
   );
 };
